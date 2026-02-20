@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div class="container">
-        <div class="box">I am a box1</div>
+        <div class="box" style="display: flex;">I am a box</div>
         <div class="box">I am a box2</div>
         <div class="box">I am a box3</div>
+        <div class="box">I am Hidden</div>
     </div>
     <script>
-        doc
+        document.querySelector(".box").innerHTML = "I am a <b>Box1</b>"
+        document.querySelectorAll(".box")[1].innerText = "I am a <b>Box2</b>"
+        document.querySelectorAll(".box")[3].hidden = true
+        console.log(document.querySelectorAll(".box")[0].getAttribute("style"))
+        document.querySelectorAll(".box")[0].setAttribute("style", "display:Inline-block;")
+        console.log(document.querySelectorAll(".box")[0].getAttribute("style"))
+        document.querySelectorAll(".box")[0].removeAttribute("style")
+        //console.log(document.querySelectorAll(".box")[0].getAttribute("style"))
+        //document.designMode = "on"
+        
     </script>
 </body>
+
 </html>

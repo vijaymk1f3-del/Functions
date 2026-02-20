@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">I am a box</div>
+        <div class="box">I am a box2</div>
+        <div class="box">I am a box3</div>
+    </div>
+    <script>
+        for (let i = 0; i < 3; i++) {
+            let div = document.createElement("div");
+            div.setAttribute("class", "created")
+            div.innerHTML = "Hello Buddies"
+            document.querySelector(".container").prepend(div);
+            //append- Inside the container at the End
+            //after - Outside the container just after container
+            //before-Outside the container just before container
+        }
+        let div = document.createElement("div");
+        div.setAttribute("class", "created")
+        div.innerHTML = "Hello Buddies"
+        document.querySelector(".container").insertAdjacentElement("beforeend", div)//beforeend- Inside the container at the End
+        //afterend- Outside the container just after container
+        //beforebegin-Outside the container just before container
+        //afterbegin- Inside the container at the beginning
+        document.querySelector(".created").remove()//remove the element
+    </script>
+
+</body>
+
+</html>
