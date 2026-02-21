@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- callback means calling a fuction inside a function  -->
+     <!-- to much callback function is called callback hell -->
+      <!-- To solve it we use Promices -->
+    <script>
+        console.log("Sanga is a hacker")
+        console.log("Sanga is a hacker2")
+        
+        setTimeout(()=>{
+            console.log("I am Inside a timeout")
+        },0)
+        setTimeout(()=>{
+            console.log("I am Inside a timeout2")
+        },0)
+
+        console.log("the end")
+
+        const fn=()=>{
+            console.log("I am a function")
+        }
+
+
+        const callback =(arg)=>{
+            console.log(arg)
+            fn();
+        }
+        const loadScript = (src, callback)=>{
+            let sc = document.createElement("script");
+            sc.src=src;
+            sc.onload=callback("Sanga",fn);
+            document.head.append(sc)
+        }
+        loadScript("https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js",callback)
+    </script>
+</body>
+</html>
