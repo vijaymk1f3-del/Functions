@@ -24,7 +24,9 @@
             //before-Outside the container just before container
         }
         let div = document.createElement("div");
-        div.setAttribute("class", "created")
+        div.setAttribute("class", "created")//It overrides the previous class and adds the new class but if we use classList then it will add the new class without overriding the previous class
+        div.classList.add("newClass")//It adds the new class without overriding the previous class
+        
         div.innerHTML = "Hello Buddies"
         document.querySelector(".container").insertAdjacentElement("beforeend", div)//beforeend- Inside the container at the End
         //afterend- Outside the container just after container
