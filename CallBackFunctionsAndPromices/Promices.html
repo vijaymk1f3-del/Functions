@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    console.log('This is Promises');
+    let prom1 = new Promise((resolve, reject) => {
+        let a = Math.random();
+        if (a > 0.5) {
+            setTimeout(() => {
+                console.log('Yes I am done.');
+                resolve("Prom1 fuction is resolved")
+            }, 3000)
+        }
+        else {
+            reject("Prom1 fuction is rejected")
+        }
+    })
+    prom1.then((a) => {
+        console.log(a);
+    }).catch((err) => {
+        console.log(err);
+    })
+</script>
+
+</html>
